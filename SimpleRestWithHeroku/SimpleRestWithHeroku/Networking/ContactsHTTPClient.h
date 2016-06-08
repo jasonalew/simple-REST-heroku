@@ -17,13 +17,14 @@
 + (ContactsHTTPClient *)sharedContactsHTTPClient;
 - (instancetype)initWithBaseURL:(NSURL *)url;
 - (void)getAllContacts;
-- (void)addContact:(Contact *)contact;
+- (void)addContact:(NSDictionary *)contactDict;
+- (void)editContact:(NSDictionary *)contactDict;
 @end
 
 @protocol ContactsHTTPClientDelegate <NSObject>
 @optional
 - (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateAllContacts:(NSArray *)responseObject;
-- (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateContact:(Contact *)contact;
+- (void)contactsHTTPClientDidUpdateContact:(ContactsHTTPClient *)client;
 - (void)contactHTTPClient:(ContactsHTTPClient *)client didFailWithError:(NSError *)error;
 
 

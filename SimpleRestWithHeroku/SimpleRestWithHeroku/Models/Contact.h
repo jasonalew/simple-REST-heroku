@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString *email;
 
 - (instancetype)init:(NSDictionary *)responseObject;
+- (NSDictionary *)dictionaryFromContact;
 
 @end

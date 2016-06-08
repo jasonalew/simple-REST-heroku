@@ -12,6 +12,7 @@
 
 @interface ContactsTableViewController ()
 @property (strong, nonatomic) NSArray *contacts;
+@property (strong, nonatomic) ContactsHTTPClient *contactsHTTPClient;
 
 @end
 
@@ -22,9 +23,17 @@
     
     self.contacts = [[NSArray alloc]init];
     
-    ContactsHTTPClient *contactsHTTPClient = [ContactsHTTPClient sharedContactsHTTPClient];
-    contactsHTTPClient.delegate = self;
-    [contactsHTTPClient getAllContacts];
+    self.contactsHTTPClient = [ContactsHTTPClient sharedContactsHTTPClient];
+    self.contactsHTTPClient.delegate = self;
+    [self.contactsHTTPClient getAllContacts];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.contactsHTTPClient getAllContacts];
+    if (self.contacts.count > [self.tableView numberOfRowsInSection:0]) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,10 +43,8 @@
 
 #pragma mark - ContactsHTTPClient Delegate
 
-- (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateAllContacts:(NSArray *)responseObject
-{
+- (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateAllContacts:(NSArray *)responseObject {
     self.contacts = responseObject;
-    NSLog(@"Contacts: %@", self.contacts);
     [self.tableView reloadData];
 }
 
@@ -58,7 +65,6 @@
     ContactsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Contact *contact = [[Contact alloc]init:self.contacts[indexPath.row]];
-    NSLog(@"Contact: %@", contact);
     cell.firstNameLabel.text = contact.firstName;
     cell.lastNameLabel.text = contact.lastName;
     cell.emailLabel.text = contact.email;
@@ -66,8 +72,7 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
 }
 

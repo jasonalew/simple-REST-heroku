@@ -22,4 +22,13 @@
     return nil;
 }
 
+- (NSDictionary *)dictionaryFromContact {
+    NSDictionary *dict = @{
+                           @"firstName": self.firstName,
+                           @"lastName": self.lastName,
+                           @"email": self.email
+                           };
+    return dict;
+}
+
 @end
