@@ -10,11 +10,13 @@
 
 @implementation Contact
 
-- (instancetype)init:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email {
+- (instancetype)init:(NSDictionary *)responseObject {
     if (self = [super init]) {
-        _firstName = firstName;
-        _lastName = lastName;
-        _email = email;
+        
+        _firstName = responseObject[@"firstName"];
+        _lastName = responseObject[@"lastName"];
+        _email = responseObject[@"email"];
+        
         return self;
     }
     return nil;

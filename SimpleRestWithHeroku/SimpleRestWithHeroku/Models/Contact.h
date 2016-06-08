@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *email;
 
-- (instancetype)init:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email;
+- (instancetype)init:(NSDictionary *)responseObject;
 
 @end

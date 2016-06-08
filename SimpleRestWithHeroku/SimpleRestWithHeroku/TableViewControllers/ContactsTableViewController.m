@@ -7,6 +7,8 @@
 //
 
 #import "ContactsTableViewController.h"
+#import "ContactsTableViewCell.h"
+#import "Contact.h"
 
 @interface ContactsTableViewController ()
 @property (strong, nonatomic) NSArray *contacts;
@@ -20,16 +22,23 @@
     
     self.contacts = [[NSArray alloc]init];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    ContactsHTTPClient *contactsHTTPClient = [ContactsHTTPClient sharedContactsHTTPClient];
+    contactsHTTPClient.delegate = self;
+    [contactsHTTPClient getAllContacts];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - ContactsHTTPClient Delegate
+
+- (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateAllContacts:(NSArray *)responseObject
+{
+    self.contacts = responseObject;
+    NSLog(@"Contacts: %@", self.contacts);
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -44,15 +53,23 @@
     return self.contacts.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    ContactsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Contact *contact = [[Contact alloc]init:self.contacts[indexPath.row]];
+    NSLog(@"Contact: %@", contact);
+    cell.firstNameLabel.text = contact.firstName;
+    cell.lastNameLabel.text = contact.lastName;
+    cell.emailLabel.text = contact.email;
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 
 /*
 // Override to support conditional editing of the table view.

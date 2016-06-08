@@ -16,6 +16,8 @@
 		55AEE4B31D07F0A100A84981 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B21D07F0A100A84981 /* ContactsTableViewController.m */; };
 		55AEE4B71D07F16200A84981 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B61D07F16200A84981 /* Contact.m */; };
 		55AEE4BA1D07F3DB00A84981 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B91D07F3DB00A84981 /* ContactsTableViewCell.m */; };
+		55AEE4BE1D0873F300A84981 /* ContactsHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4BD1D0873F300A84981 /* ContactsHTTPClient.m */; };
+		55AEE4C01D0876F400A84981 /* URLAddresses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55AEE4BF1D0876F400A84981 /* URLAddresses.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		55AEE4B61D07F16200A84981 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = Models/Contact.m; sourceTree = "<group>"; };
 		55AEE4B81D07F3DB00A84981 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsTableViewCell.h; path = TableViewControllers/ContactsTableViewCell.h; sourceTree = "<group>"; };
 		55AEE4B91D07F3DB00A84981 /* ContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsTableViewCell.m; path = TableViewControllers/ContactsTableViewCell.m; sourceTree = "<group>"; };
+		55AEE4BC1D0873F300A84981 /* ContactsHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsHTTPClient.h; path = Networking/ContactsHTTPClient.h; sourceTree = "<group>"; };
+		55AEE4BD1D0873F300A84981 /* ContactsHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsHTTPClient.m; path = Networking/ContactsHTTPClient.m; sourceTree = "<group>"; };
+		55AEE4BF1D0876F400A84981 /* URLAddresses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = URLAddresses.plist; path = Networking/URLAddresses.plist; sourceTree = "<group>"; };
 		93872473044249EA84ED0867 /* Pods-SimpleRestWithHeroku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRestWithHeroku.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku.release.xcconfig"; sourceTree = "<group>"; };
 		B8EAC510481E93CFE951AB31 /* Pods-SimpleRestWithHeroku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRestWithHeroku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +85,7 @@
 		55AEE4981D07E9CE00A84981 /* SimpleRestWithHeroku */ = {
 			isa = PBXGroup;
 			children = (
+				55AEE4BB1D08733800A84981 /* Networking */,
 				55AEE4B41D07F14200A84981 /* Models */,
 				55AEE4B01D07F07F00A84981 /* TableViewControllers */,
 				55AEE49C1D07E9CE00A84981 /* AppDelegate.h */,
@@ -119,6 +125,16 @@
 				55AEE4B61D07F16200A84981 /* Contact.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		55AEE4BB1D08733800A84981 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE4BC1D0873F300A84981 /* ContactsHTTPClient.h */,
+				55AEE4BD1D0873F300A84981 /* ContactsHTTPClient.m */,
+				55AEE4BF1D0876F400A84981 /* URLAddresses.plist */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		6B4CAF68174D5625A29EA3B0 /* Frameworks */ = {
@@ -191,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AEE4A91D07E9CE00A84981 /* LaunchScreen.storyboard in Resources */,
+				55AEE4C01D0876F400A84981 /* URLAddresses.plist in Resources */,
 				55AEE4A61D07E9CE00A84981 /* Assets.xcassets in Resources */,
 				55AEE4A41D07E9CE00A84981 /* Main.storyboard in Resources */,
 			);
@@ -254,6 +271,7 @@
 				55AEE4BA1D07F3DB00A84981 /* ContactsTableViewCell.m in Sources */,
 				55AEE4B71D07F16200A84981 /* Contact.m in Sources */,
 				55AEE49E1D07E9CE00A84981 /* AppDelegate.m in Sources */,
+				55AEE4BE1D0873F300A84981 /* ContactsHTTPClient.m in Sources */,
 				55AEE49B1D07E9CE00A84981 /* main.m in Sources */,
 				55AEE4B31D07F0A100A84981 /* ContactsTableViewController.m in Sources */,
 			);

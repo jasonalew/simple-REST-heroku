@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactsHTTPClient.h"
 
-@interface ContactsTableViewController : UITableViewController
+@interface ContactsTableViewController : UITableViewController <ContactsHTTPClientDelegate>
 
 @end
