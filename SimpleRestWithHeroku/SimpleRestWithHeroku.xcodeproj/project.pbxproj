@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B700B76D05B4A74507FA067 /* libPods-SimpleRestWithHeroku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A391DE842D9AA792BB3DA7 /* libPods-SimpleRestWithHeroku.a */; };
+		55AEE49B1D07E9CE00A84981 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE49A1D07E9CE00A84981 /* main.m */; };
+		55AEE49E1D07E9CE00A84981 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE49D1D07E9CE00A84981 /* AppDelegate.m */; };
+		55AEE4A41D07E9CE00A84981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AEE4A21D07E9CE00A84981 /* Main.storyboard */; };
+		55AEE4A61D07E9CE00A84981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AEE4A51D07E9CE00A84981 /* Assets.xcassets */; };
+		55AEE4A91D07E9CE00A84981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AEE4A71D07E9CE00A84981 /* LaunchScreen.storyboard */; };
+		55AEE4B31D07F0A100A84981 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B21D07F0A100A84981 /* ContactsTableViewController.m */; };
+		55AEE4B71D07F16200A84981 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B61D07F16200A84981 /* Contact.m */; };
+		55AEE4BA1D07F3DB00A84981 /* ContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEE4B91D07F3DB00A84981 /* ContactsTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15A391DE842D9AA792BB3DA7 /* libPods-SimpleRestWithHeroku.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleRestWithHeroku.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55AEE4961D07E9CE00A84981 /* SimpleRestWithHeroku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRestWithHeroku.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55AEE49A1D07E9CE00A84981 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55AEE49C1D07E9CE00A84981 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55AEE49D1D07E9CE00A84981 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55AEE4A31D07E9CE00A84981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55AEE4A51D07E9CE00A84981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55AEE4A81D07E9CE00A84981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55AEE4AA1D07E9CE00A84981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55AEE4B11D07F0A100A84981 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsTableViewController.h; path = TableViewControllers/ContactsTableViewController.h; sourceTree = "<group>"; };
+		55AEE4B21D07F0A100A84981 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsTableViewController.m; path = TableViewControllers/ContactsTableViewController.m; sourceTree = "<group>"; };
+		55AEE4B51D07F16200A84981 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = Models/Contact.h; sourceTree = "<group>"; };
+		55AEE4B61D07F16200A84981 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = Models/Contact.m; sourceTree = "<group>"; };
+		55AEE4B81D07F3DB00A84981 /* ContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsTableViewCell.h; path = TableViewControllers/ContactsTableViewCell.h; sourceTree = "<group>"; };
+		55AEE4B91D07F3DB00A84981 /* ContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsTableViewCell.m; path = TableViewControllers/ContactsTableViewCell.m; sourceTree = "<group>"; };
+		93872473044249EA84ED0867 /* Pods-SimpleRestWithHeroku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRestWithHeroku.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku.release.xcconfig"; sourceTree = "<group>"; };
+		B8EAC510481E93CFE951AB31 /* Pods-SimpleRestWithHeroku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleRestWithHeroku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55AEE4931D07E9CE00A84981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B700B76D05B4A74507FA067 /* libPods-SimpleRestWithHeroku.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49EA49D301CD3F72FA766F0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAC510481E93CFE951AB31 /* Pods-SimpleRestWithHeroku.debug.xcconfig */,
+				93872473044249EA84ED0867 /* Pods-SimpleRestWithHeroku.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		55AEE48D1D07E9CE00A84981 = {
+			isa = PBXGroup;
+			children = (
+				55AEE4981D07E9CE00A84981 /* SimpleRestWithHeroku */,
+				55AEE4971D07E9CE00A84981 /* Products */,
+				49EA49D301CD3F72FA766F0C /* Pods */,
+				6B4CAF68174D5625A29EA3B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55AEE4971D07E9CE00A84981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE4961D07E9CE00A84981 /* SimpleRestWithHeroku.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55AEE4981D07E9CE00A84981 /* SimpleRestWithHeroku */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE4B41D07F14200A84981 /* Models */,
+				55AEE4B01D07F07F00A84981 /* TableViewControllers */,
+				55AEE49C1D07E9CE00A84981 /* AppDelegate.h */,
+				55AEE49D1D07E9CE00A84981 /* AppDelegate.m */,
+				55AEE4A21D07E9CE00A84981 /* Main.storyboard */,
+				55AEE4A51D07E9CE00A84981 /* Assets.xcassets */,
+				55AEE4A71D07E9CE00A84981 /* LaunchScreen.storyboard */,
+				55AEE4AA1D07E9CE00A84981 /* Info.plist */,
+				55AEE4991D07E9CE00A84981 /* Supporting Files */,
+			);
+			path = SimpleRestWithHeroku;
+			sourceTree = "<group>";
+		};
+		55AEE4991D07E9CE00A84981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE49A1D07E9CE00A84981 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55AEE4B01D07F07F00A84981 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE4B11D07F0A100A84981 /* ContactsTableViewController.h */,
+				55AEE4B21D07F0A100A84981 /* ContactsTableViewController.m */,
+				55AEE4B81D07F3DB00A84981 /* ContactsTableViewCell.h */,
+				55AEE4B91D07F3DB00A84981 /* ContactsTableViewCell.m */,
+			);
+			name = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		55AEE4B41D07F14200A84981 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55AEE4B51D07F16200A84981 /* Contact.h */,
+				55AEE4B61D07F16200A84981 /* Contact.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6B4CAF68174D5625A29EA3B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15A391DE842D9AA792BB3DA7 /* libPods-SimpleRestWithHeroku.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55AEE4951D07E9CE00A84981 /* SimpleRestWithHeroku */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55AEE4AD1D07E9CE00A84981 /* Build configuration list for PBXNativeTarget "SimpleRestWithHeroku" */;
+			buildPhases = (
+				DB2DAB29FC7E501FE2B95D47 /* 📦 Check Pods Manifest.lock */,
+				55AEE4921D07E9CE00A84981 /* Sources */,
+				55AEE4931D07E9CE00A84981 /* Frameworks */,
+				55AEE4941D07E9CE00A84981 /* Resources */,
+				E720C837F07AD220F5493EA9 /* 📦 Embed Pods Frameworks */,
+				5D5AEAF8E5C9E7C1C90B2597 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleRestWithHeroku;
+			productName = SimpleRestWithHeroku;
+			productReference = 55AEE4961D07E9CE00A84981 /* SimpleRestWithHeroku.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55AEE48E1D07E9CE00A84981 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Jason Lew";
+				TargetAttributes = {
+					55AEE4951D07E9CE00A84981 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y36ZG49HW8;
+					};
+				};
+			};
+			buildConfigurationList = 55AEE4911D07E9CE00A84981 /* Build configuration list for PBXProject "SimpleRestWithHeroku" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55AEE48D1D07E9CE00A84981;
+			productRefGroup = 55AEE4971D07E9CE00A84981 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55AEE4951D07E9CE00A84981 /* SimpleRestWithHeroku */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55AEE4941D07E9CE00A84981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55AEE4A91D07E9CE00A84981 /* LaunchScreen.storyboard in Resources */,
+				55AEE4A61D07E9CE00A84981 /* Assets.xcassets in Resources */,
+				55AEE4A41D07E9CE00A84981 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D5AEAF8E5C9E7C1C90B2597 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB2DAB29FC7E501FE2B95D47 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E720C837F07AD220F5493EA9 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleRestWithHeroku/Pods-SimpleRestWithHeroku-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55AEE4921D07E9CE00A84981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55AEE4BA1D07F3DB00A84981 /* ContactsTableViewCell.m in Sources */,
+				55AEE4B71D07F16200A84981 /* Contact.m in Sources */,
+				55AEE49E1D07E9CE00A84981 /* AppDelegate.m in Sources */,
+				55AEE49B1D07E9CE00A84981 /* main.m in Sources */,
+				55AEE4B31D07F0A100A84981 /* ContactsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		55AEE4A21D07E9CE00A84981 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55AEE4A31D07E9CE00A84981 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55AEE4A71D07E9CE00A84981 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55AEE4A81D07E9CE00A84981 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55AEE4AB1D07E9CE00A84981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55AEE4AC1D07E9CE00A84981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55AEE4AE1D07E9CE00A84981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8EAC510481E93CFE951AB31 /* Pods-SimpleRestWithHeroku.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SimpleRestWithHeroku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.SimpleRestWithHeroku;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55AEE4AF1D07E9CE00A84981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93872473044249EA84ED0867 /* Pods-SimpleRestWithHeroku.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SimpleRestWithHeroku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.SimpleRestWithHeroku;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55AEE4911D07E9CE00A84981 /* Build configuration list for PBXProject "SimpleRestWithHeroku" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55AEE4AB1D07E9CE00A84981 /* Debug */,
+				55AEE4AC1D07E9CE00A84981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55AEE4AD1D07E9CE00A84981 /* Build configuration list for PBXNativeTarget "SimpleRestWithHeroku" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55AEE4AE1D07E9CE00A84981 /* Debug */,
+				55AEE4AF1D07E9CE00A84981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55AEE48E1D07E9CE00A84981 /* Project object */;
+}
