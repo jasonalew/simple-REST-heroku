@@ -9,9 +9,11 @@
 #import "EditContactViewController.h"
 #import "Contact.h"
 #import "ContactsHTTPClient.h"
+#import "Constants.h"
 
 @interface EditContactViewController ()<UITextFieldDelegate, ContactsHTTPClientDelegate>
 @property (nonatomic) BOOL editContact;
+@property (strong, nonatomic) ContactsHTTPClient *contactsClient;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
@@ -32,28 +34,42 @@
     if (self.contact) {
         self.title = @"Edit Contact";
         self.editContact = YES;
+        [self loadData];
     } else {
         self.editContact = NO;
+        self.title = @"Add Contact";
     }
+    
+    self.contactsClient = [ContactsHTTPClient sharedContactsHTTPClient];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)loadData {
+    self.firstNameTextField.text = self.contact.firstName;
+    self.lastNameTextField.text = self.contact.lastName;
+    self.emailTextField.text = self.contact.email;
+}
+
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
     if (self.firstNameTextField.text.length > 0 && self.lastNameTextField.text.length > 0 && self.emailTextField.text.length > 0) {
-        ContactsHTTPClient *contactsClient = [ContactsHTTPClient sharedContactsHTTPClient];
-        contactsClient.delegate = self;
+        
+        self.contactsClient.delegate = self;
         NSDictionary *dict = @{
                                @"firstName": self.firstNameTextField.text,
                                @"lastName": self.lastNameTextField.text,
-                               @"email": self.emailTextField.text
+                               @"email": self.emailTextField.text,
+                               @"_id": self.contact._id
                                };
         if (self.editContact) {
-            [contactsClient editContact:dict];
+            [self.contactsClient editContact:dict];
+            NSLog(@"Dict from Contact: %@", [self.contact dictionaryFromContact]);
         } else {
-            [contactsClient addContact:dict];
+            
+            [self.contactsClient addContact:dict];
         }
     } else {
         // TODO: Provide user feedback for missing field
@@ -61,6 +77,8 @@
 }
 
 - (void)contactsHTTPClientDidUpdateContact:(ContactsHTTPClient *)client {
+    NSLog(@"Updated contact");
+    [[NSNotificationCenter defaultCenter]postNotificationName:updatedContactNotification object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

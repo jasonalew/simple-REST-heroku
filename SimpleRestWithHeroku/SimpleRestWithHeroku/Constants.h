@@ -10,7 +10,8 @@
 
 @interface Constants : NSObject
 
-extern NSString * const editContactSegueIdentifier;
+extern NSString *const editContactSegueIdentifier;
+extern NSString *const updatedContactNotification;
 
 @end
 

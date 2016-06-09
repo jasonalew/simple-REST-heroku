@@ -12,7 +12,7 @@
 
 - (instancetype)init:(NSDictionary *)responseObject {
     if (self = [super init]) {
-        
+        __id = responseObject[@"_id"];
         _firstName = responseObject[@"firstName"];
         _lastName = responseObject[@"lastName"];
         _email = responseObject[@"email"];
@@ -24,6 +24,7 @@
 
 - (NSDictionary *)dictionaryFromContact {
     NSDictionary *dict = @{
+                           @"_id": self._id,
                            @"firstName": self.firstName,
                            @"lastName": self.lastName,
                            @"email": self.email

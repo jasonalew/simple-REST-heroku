@@ -8,7 +8,8 @@
 
 #import "Constants.h"
 
-NSString * const editContactSegueIdentifier = @"editContactSegueIdentifier";
+NSString * const editContactSegueIdentifier = @"EditContactSegue";
+NSString *const updatedContactNotification = @"updatedContactNotification";
 
 @implementation Constants
 

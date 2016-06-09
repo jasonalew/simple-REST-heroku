@@ -10,6 +10,13 @@
 
 @implementation ContactsTableViewCell
 
+- (void)setContact:(Contact *)contact {
+    _contact = contact;
+    self.firstNameLabel.text = _contact.firstName;
+    self.lastNameLabel.text = _contact.lastName;
+    self.emailLabel.text = _contact.email;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -20,5 +27,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

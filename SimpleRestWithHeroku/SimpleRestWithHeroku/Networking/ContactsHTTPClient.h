@@ -23,7 +23,7 @@
 
 @protocol ContactsHTTPClientDelegate <NSObject>
 @optional
-- (void)contactsHTTPClient:(ContactsHTTPClient *)client didUpdateAllContacts:(NSArray *)responseObject;
+- (void)contactsHTTPClient:(ContactsHTTPClient *)client didGetAllContacts:(NSArray *)responseObject;
 - (void)contactsHTTPClientDidUpdateContact:(ContactsHTTPClient *)client;
 - (void)contactHTTPClient:(ContactsHTTPClient *)client didFailWithError:(NSError *)error;
 
