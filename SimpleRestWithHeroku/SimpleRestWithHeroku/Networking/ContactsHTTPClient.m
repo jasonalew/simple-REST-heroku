@@ -20,7 +20,9 @@ static NSString *const ContactsBaseURL = @"contactsBaseURL";
     static ContactsHTTPClient *_sharedContactsHTTPClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"URLAddresses" ofType:@"plist"];
+        // The baseURL is loaded from a plist.
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"URLAddresses"
+                                                        ofType:@"plist"];
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
         NSString *baseURLString = dict[ContactsBaseURL];
         
@@ -42,17 +44,17 @@ static NSString *const ContactsBaseURL = @"contactsBaseURL";
 - (void)getAllContacts {
     [self GET:@"/contacts" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"Progress: %@", downloadProgress);
+        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"GetAllContacts StatusCode: %d", [self statusCodeForTask:task]);
+        // Got the contacts, pass them to the delegate.
         if ([self.delegate respondsToSelector:@selector(contactsHTTPClient:didGetAllContacts:)]) {
-            NSLog(@"Triggering delegate");
             [self.delegate contactsHTTPClient:self didGetAllContacts:responseObject];
         } else {
-            NSLog(@"Doens't respond to selector");
+            NSLog(@"Doesn't respond to selector");
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
         NSLog(@"Failed to get all contacts: %@,\nStatusCode: %d", error.localizedDescription, [self statusCodeForTask:task]);
     }];
 }
@@ -65,26 +67,31 @@ static NSString *const ContactsBaseURL = @"contactsBaseURL";
         if ([self.delegate respondsToSelector:@selector(contactsHTTPClientDidUpdateContact:)]) {
             [self.delegate contactsHTTPClientDidUpdateContact:self];
         }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Failed to update contact: %@\nStatusCode: %d", error.localizedDescription, [self statusCodeForTask:task]);
+        NSLog(@"Failed to update contact: %@\nStatusCode: %d",
+              error.localizedDescription,
+              [self statusCodeForTask:task]);
     }];
 }
 
 - (void)editContact:(NSDictionary *)contactDict {
+    // The REST server requires the id in the path, pull it out of the dictionary
+    // and append to path.
     NSString *path = [NSString stringWithFormat:@"/contacts/%@", contactDict[@"_id"]];
     NSLog(@"PATH: %@", path);
-    [self PUT:path parameters:contactDict success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    
+    [self PUT:path parameters:contactDict
+      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"EditContact Code: %d", [self statusCodeForTask:task]);
         if ([self.delegate respondsToSelector:@selector(contactsHTTPClientDidUpdateContact:)]) {
-            
             [self.delegate contactsHTTPClientDidUpdateContact:self];
-        } else {
-            
-            NSLog(@"NOT");
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Failed to edit contact: %@, StatusCode: %d", error.localizedDescription, [self statusCodeForTask:task]);
+        NSLog(@"Failed to edit contact: %@, StatusCode: %d",
+              error.localizedDescription,
+              [self statusCodeForTask:task]);
     }];
 }
 

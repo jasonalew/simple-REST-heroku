@@ -55,7 +55,10 @@
 }
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
-    if (self.firstNameTextField.text.length > 0 && self.lastNameTextField.text.length > 0 && self.emailTextField.text.length > 0) {
+    // Check that all the fields have values before trying to save.
+    if (self.firstNameTextField.text.length > 0 &&
+        self.lastNameTextField.text.length > 0 &&
+        self.emailTextField.text.length > 0) {
         
         self.contactsClient.delegate = self;
         NSDictionary *dict = @{
@@ -66,19 +69,20 @@
                                };
         if (self.editContact) {
             [self.contactsClient editContact:dict];
-            NSLog(@"Dict from Contact: %@", [self.contact dictionaryFromContact]);
         } else {
-            
             [self.contactsClient addContact:dict];
         }
     } else {
-        // TODO: Provide user feedback for missing field
+        // TODO: Provide user feedback for missing field info
     }
 }
 
 - (void)contactsHTTPClientDidUpdateContact:(ContactsHTTPClient *)client {
     NSLog(@"Updated contact");
-    [[NSNotificationCenter defaultCenter]postNotificationName:updatedContactNotification object:nil];
+    // Let the root VC know that the table needs to be reloaded.
+    // TODO: Keep track of the indexPath and only reload that cell.
+    [[NSNotificationCenter defaultCenter]postNotificationName:updatedContactNotification
+                                                       object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
