@@ -10,12 +10,12 @@
 
 @interface Contact : NSObject
 
-@property (strong, nonatomic) NSString *_id;
-@property (strong, nonatomic) NSString *firstName;
-@property (strong, nonatomic) NSString *lastName;
-@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic, nullable) NSString *_id;
+@property (strong, nonatomic, nonnull) NSString *firstName;
+@property (strong, nonatomic, nonnull) NSString *lastName;
+@property (strong, nonatomic, nonnull) NSString *email;
 
-- (instancetype)init:(NSDictionary *)responseObject;
-- (NSDictionary *)dictionaryFromContact;
+- (nullable instancetype)init:(nonnull NSDictionary *)responseObject;
+- (nonnull NSDictionary *)dictionaryFromContact;
 
 @end
